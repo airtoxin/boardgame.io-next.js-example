@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import { Lobby } from "boardgame.io/react";
+import { TicTacToe } from "../games/TicTacToe";
+import { TicTacToeBoard } from "../components/TicTacToeBoard";
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
@@ -9,6 +12,13 @@ const IndexPage = () => (
         <a>About</a>
       </Link>
     </p>
+    <Lobby
+      gameServer={`http://localhost:8000`}
+      lobbyServer={`http://localhost:8000`}
+      gameComponents={[
+        { game: TicTacToe, board: TicTacToeBoard }
+      ]}
+    />;
   </Layout>
 )
 
