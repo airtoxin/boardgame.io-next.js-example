@@ -6,6 +6,7 @@ export type TicTacToeState = {
 }
 
 export const TicTacToe: Game<TicTacToeState> = {
+  name: "TicTacToe",
   setup: () => ({ cells: Array(9).fill(null) }),
   turn: {
     moveLimit: 1,
